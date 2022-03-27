@@ -23,26 +23,50 @@ class Person
   end
 
 
-  # def bank_account
-  #   @balance = 25
-  # end
+  def hygiene
+    if @hygiene > 10
+      return 10  
+   elsif @hygiene.between?(1,9)
+       return @hygiene
+   else
+      @hygiene < 0
+      return 0
+    end
+  end
 
-  # def clean?
-  #   @hygiene > 7
-  # end
+  def happy?
+    @happiness > 7
+  end
 
-  # def happy?
-  #   @happiness > 7
-  # end
+  def clean?
+    @hygiene > 7
+  end
 
-  # def call_friend(person)
-  #   @happiness += 3
-  #   person.happiness += 3
-  # end
+  def get_paid(salary)
+    @bank_account += salary
+    "all about the benjamins"
+  end
+
+  def take_bath
+    self.hygiene=(@hygiene += 4)    
+    "♪ Rub-a-dub just relaxing in the tub ♫"
+  end
+
+  def work_out
+    self.happiness=(@happiness += 2)    
+    self.hygiene=(@hygiene -= 3)    
+    "♪ another one bites the dust ♫"
+  end
+
+  def call_friend(person)
+    self.happiness=(@happiness += 3)    
+    person.happiness += 3
+    "Hi Felix! It's Stella. How are you?"
+  end
 
 
 
 end
 
       # binding.pry
-      # binding.pry
+#          binding.pry
