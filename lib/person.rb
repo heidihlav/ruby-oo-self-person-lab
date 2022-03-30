@@ -14,7 +14,7 @@ class Person
   def happiness
     if @happiness > 10
       return 10  
-   elsif @happiness.between?(1,9)
+   elsif @happiness.between?(0,10)
        return @happiness
    else
       @happiness < 0
@@ -64,11 +64,17 @@ class Person
     "Hi #{person.name}! It's #{@name}. How are you?" 
   end
 
-  def start_conversation(person, topic)
+  def start_conversation(friend, topic)
     if topic == "politics"
-      "blah blah partisan blah lobbyist"
-      person.happiness -= 2
-
+      self.happiness -= 2 
+      friend.happiness -= 2        
+        return "blah blah partisan blah lobbyist"
+    elsif topic == "weather"
+      self.happiness += 1
+      friend.happiness += 1        
+        return "blah blah sun blah rain"
+    else topic == "other"
+       return "blah blah blah blah blah"
     end 
   end
 
